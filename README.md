@@ -2,6 +2,8 @@
 
 This project is an algorithmic trading system with a Python backend API using Flask, collecting sentiment data from Twitter and RSS feeds, and providing price data from BitMEX. Data is stored in MongoDB.
 
+**GitHub Repository**: [https://github.com/potatofut/crypto-trading-api](https://github.com/potatofut/crypto-trading-api)
+
 ## Setup Instructions
 
 1. **Git and GitHub:**
