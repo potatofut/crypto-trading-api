@@ -49,12 +49,12 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: If creating a new app, follow these steps:
-  1. Create new app in developer portal
-  2. Set type to "Web App, Automated App or Bot"
-  3. Add Twitter API v2 product
-  4. Enable Search Tweets endpoint
-  5. Get Bearer Token and update .env
+- **Twitter API**: For the new app "Corrutruth":
+  1. Save the current settings (Read permissions, Web App type)
+  2. Go to Products > Add Twitter API v2
+  3. Enable Search Tweets endpoint
+  4. Get Bearer Token from Keys and Tokens
+  5. Update .env with new token
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
