@@ -49,7 +49,11 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: Updated to use Bearer Token for API v2. Add your Bearer Token to `.env` under `TWITTER_BEARER_TOKEN`.
+- **Twitter API**: Updated to use Bearer Token for API v2. The provided tokens are returning 401 Unauthorized. Please check:
+  - App configuration in Twitter Developer Portal
+  - Ensure API v2 access is enabled
+  - Regenerate Bearer Token
+  - Check if the app has elevated access for tweet search
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
