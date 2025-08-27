@@ -49,7 +49,10 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: The app is on the Free plan (100 posts/month), which is insufficient for sentiment analysis. Upgrade to Basic plan ($200/month) for 15K posts/month or Pro ($5000/month) for 1M posts/month.
+- **Twitter API**: For reading tweets, the Free plan should work but has very low limits (100 posts/month). The issue might be:
+  - The app needs to have "Twitter API v2" product added
+  - The "Search Tweets" endpoint needs to be enabled
+  - Check the app's API v2 settings in the developer portal
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
