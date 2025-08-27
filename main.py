@@ -63,10 +63,11 @@ def get_twitter_data():
     assets = list(activos.find({}, {'symbol': 1}))
     symbols = [a['symbol'] for a in assets if a['symbol'].endswith('USDT') or a['symbol'].endswith('USD')]  # Filter to stable pairs or USD
     tweets_data = []
-    for symbol in symbols[:5]:  # Limit to 5 symbols to avoid rate limits
+    # Limit to 2 symbols to avoid rate limits
+    for symbol in symbols[:2]:  # Reduced from 5 to 2
         query = f"{symbol} crypto"
         try:
-            tweets = client.search_recent_tweets(query=query, max_results=20, tweet_fields=['created_at', 'text'])
+            tweets = client.search_recent_tweets(query=query, max_results=5, tweet_fields=['created_at', 'text'])  # Reduced from 20 to 5
             if tweets.data:
                 for tweet in tweets.data:
                     score = analyzer.polarity_scores(tweet.text)['compound']
@@ -78,6 +79,9 @@ def get_twitter_data():
                     }
                     tweets_data.append(tweet_doc)
                     tweets_sentimiento.insert_one(tweet_doc)
+            # Add delay between requests to avoid rate limits
+            import time
+            time.sleep(2)  # 2 second delay
         except Exception as e:
             print(f"Error fetching tweets for {symbol}: {e}")
     return tweets_data
@@ -165,7 +169,9 @@ def get_precios():
 if __name__ == '__main__':
     initialize_activos()
     try:
-        get_twitter_data()
+        # Comment out Twitter collection to avoid rate limits during testing
+        # get_twitter_data()
+        print("Twitter collection disabled to avoid rate limits. Uncomment get_twitter_data() when ready.")
     except Exception as e:
         print(f"Error collecting Twitter data: {e}")
     try:
