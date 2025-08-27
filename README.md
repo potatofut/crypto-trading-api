@@ -49,12 +49,11 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: The app "Corrutruth" is a standalone app with limited v1.1 access only. To use v2 API:
-  1. Create a new Project in the developer portal
-  2. Create a new app within that project
-  3. Configure with Read permissions and Web App type
-  4. Add Twitter API v2 product and enable Search Tweets
-  5. Get Bearer Token and update .env
+- **Twitter API**: If you see a green icon for Twitter API v2 but can't select anything:
+  1. Make sure the app is created within a Project (not standalone)
+  2. Check if the project is fully set up and approved
+  3. Try refreshing the page or logging out/in
+  4. If still not working, create a new project and app
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
