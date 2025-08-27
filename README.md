@@ -44,7 +44,13 @@ Endpoints:
 - `.gitignore`: Git ignore file
 - `venv/`: Virtual environment
 
+## Issues and Fixes
+
+- **Twitter API 401 Error**: The provided Twitter credentials appear to be expired or invalid. Update the `.env` file with valid Twitter API credentials.
+- **RSS Feeds**: Working correctly.
+- **MongoDB**: Ensure the connection string is valid.
+
 ## Next Steps
 
-- For the frontend, create a Next.js project in a separate directory.
+- For the frontend, a Next.js project has been created in `c:\Proyectos\Web\crypto-frontend`. Open this folder in VS Code to work on it.
 - Connect the frontend to the API endpoints.

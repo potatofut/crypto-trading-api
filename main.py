@@ -165,7 +165,16 @@ def get_precios():
 
 if __name__ == '__main__':
     initialize_activos()
-    get_twitter_data()
-    get_rss_data()
-    calculate_sentiment_summary()
-    app.run(debug=True)
+    try:
+        get_twitter_data()
+    except Exception as e:
+        print(f"Error collecting Twitter data: {e}")
+    try:
+        get_rss_data()
+    except Exception as e:
+        print(f"Error collecting RSS data: {e}")
+    try:
+        calculate_sentiment_summary()
+    except Exception as e:
+        print(f"Error calculating summary: {e}")
+    app.run(debug=False, host='0.0.0.0', port=5000)
