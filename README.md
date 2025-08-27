@@ -49,11 +49,7 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: Updated to use Bearer Token for API v2. The provided tokens are returning 401 Unauthorized. Please check:
-  - App configuration in Twitter Developer Portal
-  - Ensure API v2 access is enabled
-  - Regenerate Bearer Token
-  - Check if the app has elevated access for tweet search
+- **Twitter API**: The app is on the Free plan (100 posts/month), which is insufficient for sentiment analysis. Upgrade to Basic plan ($200/month) for 15K posts/month or Pro ($5000/month) for 1M posts/month.
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
