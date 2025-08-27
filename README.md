@@ -22,6 +22,7 @@ This project is an algorithmic trading system with a Python backend API using Fl
 
 4. **Environment Variables:**
    - Credentials are set in `.env` (ensure it's not committed).
+   - For Twitter API v2, add your Bearer Token to `TWITTER_BEARER_TOKEN` in `.env`.
 
 ## Running the Program
 
@@ -46,7 +47,7 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API 401 Error**: The provided Twitter credentials appear to be expired or invalid. Update the `.env` file with valid Twitter API credentials.
+- **Twitter API**: Updated to use Bearer Token for API v2. Add your Bearer Token to `.env` under `TWITTER_BEARER_TOKEN`.
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 

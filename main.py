@@ -54,12 +54,11 @@ def initialize_activos():
 
 # Function to collect Twitter data
 def get_twitter_data():
-    client = tweepy.Client(
-        consumer_key=os.getenv('TWITTER_API_KEY'),
-        consumer_secret=os.getenv('TWITTER_API_SECRET'),
-        access_token=os.getenv('TWITTER_ACCESS_TOKEN'),
-        access_token_secret=os.getenv('TWITTER_ACCESS_TOKEN_SECRET')
-    )
+    bearer_token = os.getenv('TWITTER_BEARER_TOKEN')
+    if not bearer_token:
+        print("Twitter Bearer Token not found. Skipping Twitter data collection.")
+        return []
+    client = tweepy.Client(bearer_token=bearer_token)
     analyzer = SentimentIntensityAnalyzer()
     assets = list(activos.find({}, {'symbol': 1}))
     symbols = [a['symbol'] for a in assets if a['symbol'].endswith('USDT') or a['symbol'].endswith('USD')]  # Filter to stable pairs or USD
