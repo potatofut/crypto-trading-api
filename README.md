@@ -49,10 +49,12 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: For reading tweets, the Free plan should work but has very low limits (100 posts/month). The issue might be:
-  - The app needs to have "Twitter API v2" product added
-  - The "Search Tweets" endpoint needs to be enabled
-  - Check the app's API v2 settings in the developer portal
+- **Twitter API**: If creating a new app, follow these steps:
+  1. Create new app in developer portal
+  2. Set type to "Web App, Automated App or Bot"
+  3. Add Twitter API v2 product
+  4. Enable Search Tweets endpoint
+  5. Get Bearer Token and update .env
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
