@@ -49,11 +49,10 @@ Endpoints:
 
 ## Issues and Fixes
 
-- **Twitter API**: If you see a green icon for Twitter API v2 but can't select anything:
-  1. Make sure the app is created within a Project (not standalone)
-  2. Check if the project is fully set up and approved
-  3. Try refreshing the page or logging out/in
-  4. If still not working, create a new project and app
+- **Twitter API**: ✅ Working! Bearer Token is valid and API is accessible.
+  - Currently disabled to avoid rate limits (Free plan: 300 requests/month)
+  - To enable: Uncomment `get_twitter_data()` in main.py
+  - Rate limit optimizations applied (2 symbols, 5 tweets each, 2s delay)
 - **RSS Feeds**: Working correctly.
 - **MongoDB**: Ensure the connection string is valid.
 
